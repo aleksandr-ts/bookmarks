@@ -3,12 +3,11 @@ from django.contrib.auth import views as auth_views
 from . import views
 
 urlpatterns = [
-    # предыдущий url входа
+    # previous login url
     # path("login/", views.user_login, name="login"),
-    # url-адреса входа и выхода
     path("login/", auth_views.LoginView.as_view(), name="login"),
     path("logout/", auth_views.LogoutView.as_view(), name="logout"),
-    # url-адреса смены пароля
+    # change password urls
     path(
         "password-change/",
         auth_views.PasswordChangeView.as_view(),
