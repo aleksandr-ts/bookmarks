@@ -7,7 +7,7 @@ from .models import Action
 def create_action(user, verb, target=None):
     # check for any similar action made in the last minute
     now = timezone.now()
-    last_minute = now – datetime.timedelta(seconds=60)
+    last_minute = now - datetime.timedelta(seconds=60)
     similar_actions = Action.objects.filter(user_id=user.id,
                                             verb= verb,
                                             created__gte=last_minute)
