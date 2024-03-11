@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     "images.apps.ImagesConfig",
     "easy_thumbnails",
     "actions.apps.ActionsConfig",
+    "debug_toolbar",
 ]
 
 MIDDLEWARE = [
@@ -54,6 +55,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "debug_toolbar.middleware.DebugToolbarMiddleware",
 ]
 
 ROOT_URLCONF = "bookmarks.urls"
@@ -167,3 +169,6 @@ ABSOLUTE_URL_OVERRIDES = {
                                             args=[u.username])
 }
 
+INTERNAL_IPS = [
+        '127.0.0.1',
+]
